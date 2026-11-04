@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#10b981">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-title" content="Meta">
@@ -108,6 +111,46 @@ button,select{touch-action:manipulation}
 .rt{display:flex;justify-content:space-between;padding:3px 0}
 .rt.tt{font-weight:700;font-size:18px;border-top:2px solid var(--tx);margin-top:6px;padding-top:8px}
 @media print{body>*:not(#rcpt){display:none!important}#rcpt{position:static;background:#fff;color:#000;overflow:visible}.rbtns{display:none}#rbody{border:0;color:#000}}
+/* ===== Rediseño ===== */
+:root{--bg:#efefef;--card:#fff;--tx:#14141a;--mut:#5f5e73;--bd:#dcdce1;--line:#14141a;--fld:#f3f3f5;--ac:#17853f;--ac-hover:#126f34;--ac2:#e3f5ea;--onac:#fff;--bar:#e2e2e7;--dg:#c0392b;--dg2:#fdeceb;--btn:#555468;--navy:#1A5276;--red:#E74C3C;--yel:#F4D03F;--f:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1117;--card:#1a1d27;--tx:#f2f2f6;--mut:#a5a4b8;--bd:#2e3140;--line:#4a4d63;--fld:#252836;--ac:#3ddc84;--ac-hover:#2fc573;--ac2:#173326;--onac:#06210f;--bar:#2a2d3b;--dg:#ff7b6e;--dg2:#3a1f1f;--btn:#6b6a86;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1117;--card:#1a1d27;--tx:#f2f2f6;--mut:#a5a4b8;--bd:#2e3140;--line:#4a4d63;--fld:#252836;--ac:#3ddc84;--ac-hover:#2fc573;--ac2:#173326;--onac:#06210f;--bar:#2a2d3b;--dg:#ff7b6e;--dg2:#3a1f1f;--btn:#6b6a86;color-scheme:dark}
+body{font-family:var(--f)}
+h1{font-size:30px;font-weight:600;letter-spacing:-.03em;margin:4px 0 18px}
+h2{font-size:22px;font-weight:600;letter-spacing:-.02em;margin:0 0 12px}
+.card{border:0;border-radius:24px;padding:22px}
+label{font-size:14px;color:var(--mut);font-weight:500}
+input,select{background:var(--fld);border:2px solid transparent;border-radius:14px;padding:14px 16px;font-family:var(--f)}
+input:focus,select:focus{border-color:var(--ac);box-shadow:none}
+button{font-family:var(--f);background:var(--btn);border-radius:14px;padding:14px 18px}
+button:hover{background:var(--btn);filter:brightness(1.1)}
+button.g{background:var(--fld);color:var(--tx);border:0}
+button.g:hover{background:var(--fld);filter:brightness(.96)}
+button.x,button.x:hover{background:transparent;filter:none}
+.nav-item:hover{background:none;filter:none}
+#saveGoal,#add,#saveQ,#addCat{background:var(--ac);color:var(--onac)}
+#saveGoal:hover,#add:hover,#saveQ:hover,#addCat:hover{background:var(--ac)}
+.big{font-size:42px;font-weight:700}
+.bar{height:16px}
+nav.bottom-nav{border-top:2px solid var(--line)}
+.menu{display:grid;gap:12px;margin-bottom:14px}
+.mc{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:2px;text-align:left;min-height:104px;width:100%;background:var(--c);color:var(--ct);border:2px solid var(--line);border-radius:22px;padding:16px 18px;font-size:24px;font-weight:600;letter-spacing:-.02em}
+.mc span{font-size:14px;font-weight:500;letter-spacing:0}
+.mc:hover{background:var(--c);filter:brightness(1.05)}
+.box{border:2px solid var(--line);border-radius:20px;padding:14px 16px;margin-bottom:12px}
+.bignum{font-size:32px;font-weight:700;line-height:1}
+.thead{display:flex;justify-content:space-between;background:var(--fld);border-radius:12px 12px 0 0;padding:12px 14px;font-weight:600;border-bottom:2px solid var(--line)}
+#list li,#qlist li{border-bottom:2px solid var(--line);padding:14px 0;flex-wrap:wrap}
+#list li:last-child,#qlist li:last-child{border-bottom:0}
+.pill{display:inline-block;border:2px solid;border-radius:99px;padding:2px 12px;font-weight:600;font-size:14px;white-space:nowrap}
+.pill.ok{color:var(--ac);border-color:var(--ac);background:var(--ac2)}
+.pill.bad{color:var(--dg);border-color:var(--dg);background:var(--dg2)}
+.dot{width:30px;height:30px;border-radius:9px;border:2px solid var(--line);flex:none;display:block}
+.acc,.acc:first-child{border:2px solid var(--line);border-radius:20px;padding:14px;margin-top:12px}
+.acc:first-child{margin-top:0}
+.sw{display:flex;justify-content:space-between;align-items:flex-end;border-radius:14px;padding:14px 16px;min-height:78px;margin-bottom:12px;font-weight:500}
+.sw b{font-size:24px;font-weight:700}
+@media screen{#rbody{border:2px solid var(--line)}}
 </style>
 </head>
 <body>
@@ -116,6 +159,49 @@ button,select{touch-action:manipulation}
 
   <!-- SECCIÓN 1: INICIO / META -->
   <div class="tab-pane active" id="tab-home">
+    <div class="menu">
+      <button class="mc" data-go="tab-accounts" style="--c:var(--navy);--ct:#fff">Cuentas<span>Meta de ahorro, movimientos y saldos</span></button>
+      <button class="mc" data-go="tab-quotes" style="--c:var(--red);--ct:#14141a">Cotizaciones<span>Catálogo, clientes y recibos</span></button>
+      <button class="mc" data-go="tab-tools" style="--c:var(--yel);--ct:#14141a">Calculadora de intereses<span>Ahorro, préstamos y tasas</span></button>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2: MOVIMIENTOS -->
+  <div class="tab-pane" id="tab-movements">
+    <section class="card">
+      <div class="top"><h2 style="margin:0">Historial</h2><button class="g" id="reset">Borrar todo</button></div>
+      <div style="margin-bottom:12px"><select id="fc" aria-label="Filtrar por cuenta"></select></div>
+      <div class="box"><div class="top" style="margin:0"><span style="font-weight:600">Saldo real</span><span class="bignum" id="mbal"></span></div></div>
+      <div class="thead"><span>Movimiento</span><span>Monto</span></div>
+      <ul id="list"></ul>
+      <p class="mut" id="empty" style="margin:12px 0;text-align:center">Todavía no has agregado movimientos.</p>
+    </section>
+  </div>
+
+  <!-- SECCIÓN 3: INTERESES Y PRÉSTAMOS -->
+  <div class="tab-pane" id="tab-tools">
+    <section class="card">
+      <h2>Intereses de ahorro</h2>
+      <div class="row">
+        <div><label for="rt">Tasa anual (%)</label><input id="rt" type="number" inputmode="decimal" min="0" step="any" placeholder="Ej. 8"></div>
+        <div><label for="rn">Plazo (meses)</label><input id="rn" type="number" inputmode="numeric" min="1" step="1" placeholder="Ej. 12"></div>
+      </div>
+      <div><label for="ra">Aporte mensual extra (L)</label><input id="ra" type="number" inputmode="decimal" min="0" step="any" placeholder="0.00"></div>
+      <div class="res" id="ires"><p class="mut">Ingresa la tasa y plazo para calcular rendimiento e intereses de financiamiento.</p></div>
+    </section>
+
+    <section class="card">
+      <h2>Calculadora de tasa real</h2>
+      <div class="row">
+        <div><label for="sp">Monto prestado (L)</label><input id="sp" type="number" inputmode="decimal" min="0" step="any"></div>
+        <div><label for="sc">Cuota mensual (L)</label><input id="sc" type="number" inputmode="decimal" min="0" step="any"></div>
+      </div>
+      <div><label for="sn">Plazo en meses</label><input id="sn" type="number" inputmode="numeric" min="1" step="1"></div>
+      <div class="res" id="sres"></div>
+    </section>
+  </div>
+  <!-- SECCIÓN 4: CUENTAS -->
+  <div class="tab-pane" id="tab-accounts">
     <section class="card" id="setup">
       <div class="row">
         <div style="flex:2"><label for="gn">¿Qué quieres comprar?</label><input id="gn" placeholder="Ej. Laptop gamer"></div>
@@ -159,42 +245,7 @@ button,select{touch-action:manipulation}
       <button id="add">Agregar movimiento</button>
       <p class="mut" style="margin:10px 0 0;font-size:12px">Los movimientos con fecha futura quedan programados. Los posibles no alteran tu saldo real hasta confirmarlos.</p>
     </section>
-  </div>
 
-  <!-- SECCIÓN 2: MOVIMIENTOS -->
-  <div class="tab-pane" id="tab-movements">
-    <section class="card">
-      <div class="top"><h2 style="margin:0">Historial</h2><button class="g" id="reset">Borrar todo</button></div>
-      <div style="margin-bottom:8px"><select id="fc" aria-label="Filtrar por cuenta"></select></div>
-      <ul id="list"></ul>
-      <p class="mut" id="empty" style="margin:12px 0;text-align:center">Todavía no has agregado movimientos.</p>
-    </section>
-  </div>
-
-  <!-- SECCIÓN 3: INTERESES Y PRÉSTAMOS -->
-  <div class="tab-pane" id="tab-tools">
-    <section class="card">
-      <h2>Intereses de ahorro</h2>
-      <div class="row">
-        <div><label for="rt">Tasa anual (%)</label><input id="rt" type="number" inputmode="decimal" min="0" step="any" placeholder="Ej. 8"></div>
-        <div><label for="rn">Plazo (meses)</label><input id="rn" type="number" inputmode="numeric" min="1" step="1" placeholder="Ej. 12"></div>
-      </div>
-      <div><label for="ra">Aporte mensual extra (L)</label><input id="ra" type="number" inputmode="decimal" min="0" step="any" placeholder="0.00"></div>
-      <div class="res" id="ires"><p class="mut">Ingresa la tasa y plazo para calcular rendimiento e intereses de financiamiento.</p></div>
-    </section>
-
-    <section class="card">
-      <h2>Calculadora de tasa real</h2>
-      <div class="row">
-        <div><label for="sp">Monto prestado (L)</label><input id="sp" type="number" inputmode="decimal" min="0" step="any"></div>
-        <div><label for="sc">Cuota mensual (L)</label><input id="sc" type="number" inputmode="decimal" min="0" step="any"></div>
-      </div>
-      <div><label for="sn">Plazo en meses</label><input id="sn" type="number" inputmode="numeric" min="1" step="1"></div>
-      <div class="res" id="sres"></div>
-    </section>
-  </div>
-  <!-- SECCIÓN 4: CUENTAS -->
-  <div class="tab-pane" id="tab-accounts">
     <section class="card">
       <h2>Mis cuentas</h2>
       <div id="accs"></div>
@@ -289,6 +340,8 @@ try{
 var TYPES={debito:"Débito",credito:"Crédito",ahorro:"Ahorro",efectivo:"Efectivo",cobro:"Cobro"};
 if(!Array.isArray(S.accounts)||!S.accounts.length)S.accounts=[{id:"a1",name:"Cuenta 1",type:"debito",goal:true},{id:"a2",name:"Cuenta 2",type:"ahorro",goal:true}];
 S.mv.forEach(function(m){if(!m.acc)m.acc=S.accounts[0].id});
+var TC={debito:["#1A5276","#fff"],credito:["#E74C3C","#14141a"],ahorro:["#1E9E4F","#fff"],efectivo:["#F4D03F","#14141a"],cobro:["#7D5BA6","#fff"]};
+var QC=["#1A5276","#E74C3C","#F4D03F","#1E9E4F"];
 function accOf(id){return S.accounts.filter(function(a){return a.id===id})[0]}
 function counts(m){var a=accOf(m.acc);return !a||a.goal!==false}
 if(!S.catalog)S.catalog=[];if(!S.quotes)S.quotes=[];if(!S.qn)S.qn=0;if(!S.biz)S.biz="";
@@ -328,7 +381,8 @@ function accUI(){
   S.accounts.forEach(function(a){
     var bal=0;S.mv.forEach(function(m){if(m.acc===a.id&&!m.maybe&&m.date<=TODAY)bal+=sg(m)});
     var lab=a.type==="credito"&&bal<0?"Debes "+fmt(-bal):fmt(bal);
-    h+='<div class="acc" data-id="'+a.id+'"><div class="row"><div style="flex:2"><input class="an" value="'+esc(a.name)+'" aria-label="Nombre de la cuenta"></div><div><select class="at" aria-label="Tipo de cuenta">'+Object.keys(TYPES).map(function(k){return '<option value="'+k+'"'+(k===a.type?" selected":"")+'>'+TYPES[k]+'</option>'}).join("")+'</select></div></div><label class="chk"><input type="checkbox" class="ag"'+(a.goal!==false?" checked":"")+'> Cuenta para la meta</label><div class="top"><b>'+lab+'</b>'+(S.accounts.length>1?'<button class="x" data-delacc="'+a.id+'" aria-label="Eliminar cuenta">×</button>':'')+'</div></div>';
+    var tc=TC[a.type]||TC.debito;
+    h+='<div class="acc" data-id="'+a.id+'"><div class="sw" style="background:'+tc[0]+';color:'+tc[1]+'"><span>'+(TYPES[a.type]||"Cuenta")+'</span><b>'+lab+'</b></div><div class="row"><div style="flex:2"><input class="an" value="'+esc(a.name)+'" aria-label="Nombre de la cuenta"></div><div><select class="at" aria-label="Tipo de cuenta">'+Object.keys(TYPES).map(function(k){return '<option value="'+k+'"'+(k===a.type?" selected":"")+'>'+TYPES[k]+'</option>'}).join("")+'</select></div></div><label class="chk"><input type="checkbox" class="ag"'+(a.goal!==false?" checked":"")+'> Cuenta para la meta</label><div class="top"><button class="g" data-viewacc="'+a.id+'">Ver movimientos</button>'+(S.accounts.length>1?'<button class="x" data-delacc="'+a.id+'" aria-label="Eliminar cuenta">×</button>':'')+'</div></div>';
   });
   $("accs").innerHTML=h;
 }
@@ -346,7 +400,7 @@ function qUI(){
   $("lines").innerHTML=d.lines.map(function(l,i){return '<li><div>'+esc(l.name)+'<div class="mut"'+SM+'>'+l.qty+' × '+fmt(l.price)+'</div></div><div'+FX+'><b>'+fmt(l.price*l.qty)+'</b><button class="x" data-delline="'+i+'" aria-label="Quitar">×</button></div></li>'}).join("");
   var c=qcalc(d);
   $("qtot").innerHTML=d.lines.length?'<p>Subtotal: <b>'+fmt(c.sub)+'</b></p>'+(c.dc?'<p>Descuento: <b>− '+fmt(c.dc)+'</b></p>':'')+(c.tx?'<p>Impuesto: <b>'+fmt(c.tx)+'</b></p>':'')+'<p style="font-size:16px">Total: <b>'+fmt(c.total)+'</b></p>':'';
-  $("qlist").innerHTML=S.quotes.slice().reverse().map(function(q){var t=qcalc(q);return '<li><div>N° '+pad(q.n)+' · '+esc(q.client||"Sin nombre")+'<div class="mut"'+SM+'>'+fd(q.date)+' · '+fmt(t.total)+'</div></div><div'+FX+'><button class="g" data-view="'+q.id+'">Ver</button><button class="x" data-delq="'+q.id+'" aria-label="Eliminar">×</button></div></li>'}).join("");
+  $("qlist").innerHTML=S.quotes.slice().reverse().map(function(q){var t=qcalc(q);return '<li><div style="display:flex;align-items:center;gap:12px"><i class="dot" style="background:'+QC[q.n%4]+'"></i><div>N° '+pad(q.n)+' · '+esc(q.client||"Sin nombre")+'<div class="mut"'+SM+'>'+fd(q.date)+'</div><span class="pill ok" style="margin-top:4px">'+fmt(t.total)+'</span></div></div><div'+FX+'><button class="g" data-view="'+q.id+'">Ver</button><button class="x" data-delq="'+q.id+'" aria-label="Eliminar">×</button></div></li>'}).join("");
   $("qempty").hidden=S.quotes.length>0;
 }
 var curQ=null;
@@ -389,9 +443,11 @@ function render(){
   S.mv.filter(function(m){var f=$("fc").value;return !f||m.acc===f}).sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:0}).forEach(function(m){
     var li=document.createElement("li");
     var tag=m.maybe?'<span class="tag w">posible</span>':(m.date>TODAY?'<span class="tag">programado</span>':"");
-    li.innerHTML='<div><div>'+esc(m.note||(m.type==="in"?"Ingreso":"Egreso"))+tag+'</div><div class="mut" style="font-size:12px">'+fd(m.date)+' · '+esc((accOf(m.acc)||{name:"—"}).name)+'</div></div><div style="display:flex;align-items:center;gap:6px"><b class="'+m.type+'">'+(m.type==="in"?"+ ":"− ")+fmt(m.amount)+'</b>'+(m.maybe?' <button class="g" data-ok="'+m.id+'">Ok</button>':'')+' <button class="x" data-del="'+m.id+'" aria-label="Eliminar">×</button></div>';
+    li.innerHTML='<div><div>'+esc(m.note||(m.type==="in"?"Ingreso":"Egreso"))+tag+'</div><div class="mut" style="font-size:12px">'+fd(m.date)+' · '+esc((accOf(m.acc)||{name:"—"}).name)+'</div></div><div style="display:flex;align-items:center;gap:6px"><span class="pill '+(m.type==="in"?"ok":"bad")+'">'+(m.type==="in"?"+ ":"− ")+fmt(m.amount)+'</span>'+(m.maybe?' <button class="g" data-ok="'+m.id+'">Ok</button>':'')+' <button class="x" data-del="'+m.id+'" aria-label="Eliminar">×</button></div>';
     ul.appendChild(li);
   });
+  var fb=0,ff=$("fc").value;S.mv.forEach(function(m){if((!ff||m.acc===ff)&&!m.maybe&&m.date<=TODAY)fb+=sg(m)});
+  var mb=$("mbal");mb.textContent=fmt(fb);mb.style.color=fb<0?"var(--dg)":"var(--ac)";
   $("empty").hidden=S.mv.length>0;
   interest();
 }
@@ -490,6 +546,8 @@ $("accs").onchange=function(e){
   save();render();
 };
 $("accs").onclick=function(e){
+  var v=e.target.closest("[data-viewacc]");
+  if(v){$("fc").value=v.getAttribute("data-viewacc");render();document.querySelector('.nav-item[data-target="tab-movements"]').click();window.scrollTo(0,0);return}
   var b=e.target.closest("[data-delacc]");if(!b||S.accounts.length<2)return;
   var d=b.getAttribute("data-delacc");
   twoTap(b,"¿Seguro?",function(){
@@ -536,6 +594,7 @@ $("rShare").onclick=function(){
   function cp(){try{navigator.clipboard.writeText(txt);b.textContent="Copiado";setTimeout(function(){b.textContent="Compartir"},2000)}catch(e){}}
   if(navigator.share)navigator.share({text:txt}).catch(cp);else cp();
 };
+document.querySelectorAll(".mc").forEach(function(b){b.onclick=function(){document.querySelector('.nav-item[data-target="'+this.getAttribute("data-go")+'"]').click();window.scrollTo(0,0)}});
 render();
 if("serviceWorker" in navigator&&location.protocol==="https:"){window.addEventListener("load",function(){try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}})}
 </script>
