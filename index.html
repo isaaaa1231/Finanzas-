@@ -236,10 +236,12 @@ nav.bottom-nav{border-top:2px solid var(--line)}
       </div>
       <div class="row">
         <div><label for="mc">Cuenta</label><select id="mc"></select></div>
+        <div><label for="mr">Repetir</label><select id="mr"><option value="n">No repetir</option><option value="w">Semanal</option><option value="q">Quincenal</option><option value="m">Mensual</option></select></div>
       </div>
-      <div class="row">
-        <div><label for="mr">Repetir</label><select id="mr"><option value="n">No repetir</option><option value="w">Cada semana</option><option value="q">Cada 15 días</option><option value="m">Cada mes</option></select></div>
-        <div id="timesBox" hidden><label for="mx">Veces</label><input id="mx" type="number" min="1" max="120" value="4"></div>
+      <div id="timesBox" hidden>
+        <div class="row">
+          <div><label for="mx">Veces</label><input id="mx" type="number" min="1" max="120" value="4"></div>
+        </div>
       </div>
       <label class="chk"><input type="checkbox" id="mp"> Es un ingreso o gasto posible (no seguro)</label>
       <button id="add">Agregar movimiento</button>
